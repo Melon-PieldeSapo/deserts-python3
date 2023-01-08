@@ -83,19 +83,19 @@ def write_description(directory, m):
             last_city = city
 
 def process_directory(directory, mode="shore"):
-    print "PROCESSING", directory, mode
+    print("PROCESSING", directory, mode)
     m = get_map(directory, mode)
     draw_map(directory, m)
     write_description(directory, m)
 
 def choose(lst, p):
     n = len(lst) - 1
-    return lst[sum(np.random.random() < p for _ in xrange(n))]
+    return lst[sum(np.random.random() < p for _ in range(n))]
 
 def do_novel(directory='tests/full', n=100):
     modes = ["shore", "island", "mountain", "desert"]
     last_mode = "shore"
-    for i in xrange(n):
+    for i in range(n):
         mode = choose(modes, i/(n-1.))
         if mode == last_mode:
             mapmode = mode
